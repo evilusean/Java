@@ -22,3 +22,15 @@ sudo systemctl enable --now snapd.socket
 sudo systemctl enable --now snapd.apparmor.service
 sudo ln -s /var/lib/snapd/snap /snap
 sudo snap install intellij-idea-community --classic #will install the new intelliJ IDE on Arch
+   chmod +x ~/.local/share/applications/intellij-idea-community.desktop
+nvim ~/.local/share/applications/intellij-idea-community.desktop
+#Add below to the new '.desktop' file
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=IntelliJ IDEA Community
+Icon=/var/lib/snapd/snap/intellij-idea-community/current/bin/idea.png
+Exec=/var/lib/snapd/snap/intellij-idea-community/current/bin/idea
+Comment=IntelliJ IDEA Community Edition
+Categories=Development;IDE;
+Terminal=false
